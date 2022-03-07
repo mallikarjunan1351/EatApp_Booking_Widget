@@ -5,11 +5,9 @@ import { SlotContextProvider } from './Context/SlotContext';
 
 function App() {
 
-  const [showUser, setShowUser] = useState(false);
-
   return (
     <div className="App">
-      <SlotContextProvider value={setShowUser}>
+      <SlotContextProvider>
         <Reservation />
       </SlotContextProvider>
     </div>
