@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+import React, { useState, useContext } from 'react'
 import './App.css';
 import { Reservation } from './Components/Reservation';
-import { UserInfo } from './Components/UserInfo';
 import { SlotContextProvider } from './Context/SlotContext';
 
 function App() {
+
+  const [showUser, setShowUser] = useState(false);
+
   return (
     <div className="App">
-      <SlotContextProvider>
+      <SlotContextProvider value={setShowUser}>
         <Reservation />
-        <UserInfo />
       </SlotContextProvider>
     </div>
   );

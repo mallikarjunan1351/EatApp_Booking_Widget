@@ -2,29 +2,22 @@ import React from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Select from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
+export const UserInfo = (props) => {
 
-export const UserInfo = () => {
+    const parentCallback = props.parentCallback;
 
-    const [age, setAge] = React.useState('');
-
-    const handleChange = (event) => {
-        setAge(event.target.value);
-    };
-
+    const handleClick = () => {
+        parentCallback();
+    }
 
     return (
         <div>
@@ -53,7 +46,30 @@ export const UserInfo = () => {
                             </Grid>
 
                             <Grid item xs={6}>
-                                <TextField fullWidth size="small" id="outlined-basic" label="Phone Number" variant="outlined" />
+                                <Stack direction="row" spacing={0}>
+                                    <Box sx={{ flexGrow: 1 }}>
+                                        <Grid container>
+                                            <Grid item xs={4}>
+                                                <FormControl
+                                                    fullWidth
+                                                    size="small">
+                                                    <Select
+                                                        value={'Code'}
+                                                        displayEmpty
+                                                        inputProps={{ 'aria-label': 'Without label' }}
+                                                    >
+                                                        <MenuItem key={1} value={'Code'}>{'Code'}</MenuItem>
+                                                        <MenuItem key={2} value={'+971'}>{'+971 - UAE'}</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Grid>
+                                            <Grid item xs={8}>
+                                                <TextField fullWidth size="small" id="outlined-basic" label="Phone Number" variant="outlined" />
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                </Stack>
+
                             </Grid>
                             <Grid item xs={6}>
                                 <TextField fullWidth size="small" id="outlined-basic" label="Email" variant="outlined" />
@@ -67,7 +83,7 @@ export const UserInfo = () => {
                                 <Typography variant="body2" color="black" textAlign="left">By continuing, you agree to Eat's <a target="_blank" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/terms?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Terms of Service</a> and <a target="_blank" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/privacy?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Privacy Policy</a></Typography>
                             </Grid>
                             <Grid item xs={6}>
-                                <Button fullWidth size="small" variant="contained" color="success" sx={{ textTransform: 'capitalize', }}>Complete Reservation</Button>
+                                <Button onClick={handleClick} fullWidth size="small" variant="contained" color="success" sx={{ textTransform: 'capitalize', }}>Complete Reservation</Button>
                             </Grid>
 
                         </Grid>
