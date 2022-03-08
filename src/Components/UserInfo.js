@@ -133,7 +133,7 @@ export const UserInfo = (props) => {
                                     </Grid>
 
                                     <Grid item xs={12}>
-                                        <Typography variant="body2" color="black" textAlign="left">By continuing, you agree to Eat's <a target="_blank" rel="external" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/terms?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Terms of Service</a> and <a target="_blank" rel="external" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/privacy?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Privacy Policy</a></Typography>
+                                        <Typography variant="body2" color="black" textAlign="left">By continuing, you agree to Eat's <a target="_blank" rel="noreferrer" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/terms?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Terms of Service</a> and <a target="_blank" rel="noreferrer" sx={{ color: "blue !important" }} href="https://restaurant.eatapp.co/privacy?_ga=2.56992301.660276949.1646573581-1331509494.1645690756">Privacy Policy</a></Typography>
                                     </Grid>
                                     <Grid item xs={6}>
                                         <Button type="submit" onClick={handleClick} fullWidth size="small" variant="contained" color="success" sx={{ textTransform: 'capitalize', }}>Complete Reservation</Button>
