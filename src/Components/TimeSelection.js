@@ -7,11 +7,13 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 export const TimeSelection = (props) => {
 
     const data = props.data;
+    const parentCallback = props.parentCallback;
 
     const [time, setTime] = React.useState('');
 
     const handleChange = (event) => {
         setTime(event.target.value);
+        parentCallback(event.target.value);
     };
 
     const icon = <AccessTimeOutlinedIcon sx={{ color: '#128849', marginBottom: '-32px', marginLeft: '15px' }} />;

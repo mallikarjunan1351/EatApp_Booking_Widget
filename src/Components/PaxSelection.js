@@ -6,7 +6,9 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 
-export const PaxSelection = () => {
+export const PaxSelection = (props) => {
+
+    const parentCallback = props.parentCallback;
 
     const pax = 50;
     const arr = Array.from({ length: pax }, (_, index) => index + 1);
@@ -15,6 +17,7 @@ export const PaxSelection = () => {
 
     const handleChange = (event) => {
         setPerson(event.target.value);
+        parentCallback(event.target.value);
     };
 
     const icon = <PersonOutlineIcon sx={{ color: '#128849', marginBottom: '-32px', marginLeft: '15px' }} />;
