@@ -4,11 +4,9 @@ import axios from "axios";
 const SlotContext = createContext();
 
 export function SlotContextProvider({ children }) {
-    const [slots, setSlots] = useState([]);
     const [name, setName] = useState([]);
     const [address, setAddress] = useState([]);
     const [date, setDate] = useState([]);
-    const [time, setTime] = useState([]);
     const [showUser, setShowUser] = useState(false);
 
     useEffect(() => {

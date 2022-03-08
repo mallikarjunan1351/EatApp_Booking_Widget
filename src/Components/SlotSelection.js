@@ -22,7 +22,6 @@ export const SlotSelection = (props) => {
     const [selectedPax, setPax] = useState('2');
     const [selectedDate, setDate] = useState();
     const [selectedtime, setTime] = useState();
-    const [selectedSlot, setSlot] = useState();
     const [slotsData, setSlotsData] = useState([]);
 
     const [open, setOpen] = useState(false);
@@ -65,7 +64,7 @@ export const SlotSelection = (props) => {
     };
 
     const handleClick = () => {
-        if (selectedDate != undefined && selectedtime != undefined) {
+        if (selectedDate !== undefined && selectedtime !== undefined) {
             fetchData(selectedPax, selectedDate, selectedtime);
         } else {
             handleAlertClick();
